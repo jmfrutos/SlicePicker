@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="C:\Users\frutos\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-v4\18.0.0\support-v4-18.0.0.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="44ec51e9d395a47aab135e5e1b556c0007442156">
+        <dex dex="C:\Users\frutos\AndroidStudioProjects\SlidingMenu\app\build\intermediates\pre-dexed\debug\support-v4-18.0.0-f5d27023e1a74ab364f71f6a16b9e711a4f1dc13.jar" />
+    </item>
+
+</items>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="6dip">
+    <TextView
+        android:id="@+id/tvSuscripcion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:text="Título Suscripción "
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <TextView
+        android:id="@+id/tvDescripcion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@id/tvSuscripcion"
+        android:layout_alignLeft="@+id/tvSuscripcion"
+        android:layout_below="@+id/tvSuscripcion"
+        android:text="Aqui descripción"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    <TextView
+        android:id="@+id/tvMasInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@id/tvDescripcion"
+        android:layout_alignLeft="@+id/tvDescripcion"
+        android:layout_below="@+id/tvDescripcion"
+        android:text="Aquí va más info como tipo"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+    <TextView
+        android:id="@+id/tvID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@id/tvMasInfo"
+        android:layout_alignLeft="@+id/tvMasInfo"
+        android:layout_below="@+id/tvMasInfo"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:visibility="gone"/>
+</RelativeLayout>
