@@ -173,7 +173,7 @@ public class MainActivity extends Activity {
 			fragment = new Suscripciones();
 			break;
 		case 3:
-			fragment = new CommunityFragment();
+			fragment = new SubirFotoFragment();
 			break;
 		case 4:
 			fragment = new PagesFragment();
