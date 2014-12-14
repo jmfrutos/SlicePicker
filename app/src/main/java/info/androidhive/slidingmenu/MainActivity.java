@@ -170,7 +170,7 @@ public class MainActivity extends Activity {
 			fragment = new FindPeopleFragment();
 			break;
 		case 2:
-			fragment = new PhotosFragment();
+			fragment = new Suscripciones();
 			break;
 		case 3:
 			fragment = new CommunityFragment();
