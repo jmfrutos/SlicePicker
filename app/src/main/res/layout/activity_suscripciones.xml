@@ -14,11 +14,13 @@
         <TextView android:layout_width="match_parent"
             android:layout_height="wrap_content"
             style="?android:listSeparatorTextViewStyle"
-            android:text="@string/heading_dismissable_list_view" />
+            android:text="@string/heading_dismissable_list_view"
+            android:visibility="gone"/>
 
         <EditText android:id="@+id/filtro" android:layout_width="match_parent"
             android:layout_height="wrap_content" android:ems="10"
-            android:hint="@string/filtrar_suscripciones">
+            android:hint="@string/filtrar_suscripciones"
+            android:visibility="gone">
         </EditText>
 
         <ListView

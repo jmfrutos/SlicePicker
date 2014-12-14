@@ -28,6 +28,7 @@ public class Suscripciones extends ListFragment {
     private SimpleCursorAdapter dataAdapter;
 
     private LinearLayout ll;
+    EditText filtro;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -74,8 +75,8 @@ public class Suscripciones extends ListFragment {
         dataAdapter = new SimpleCursorAdapter(super.getActivity(), R.layout.suscripcion_detalle,
                 cursor, columns, to, 0);
         setListAdapter(dataAdapter);
-
-        EditText filtro = (EditText) ll.findViewById(R.id.filtro);
+        final View V = inflater.inflate(R.layout.activity_suscripciones, container, false);
+        filtro = (EditText) V.findViewById(R.id.filtro);
         filtro.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i2, int i3) {
