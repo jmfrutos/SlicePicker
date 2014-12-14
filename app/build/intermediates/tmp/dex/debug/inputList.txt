@@ -1,2 +1,6 @@
 C:\Users\frutos\AndroidStudioProjects\SlidingMenu\app\build\intermediates\classes\debug
-C:\Users\frutos\AndroidStudioProjects\SlidingMenu\app\build\intermediates\pre-dexed\debug\support-v4-18.0.0-f5d27023e1a74ab364f71f6a16b9e711a4f1dc13.jar
+C:\Users\frutos\AndroidStudioProjects\SlidingMenu\app\build\intermediates\pre-dexed\debug\support-annotations-21.0.0-c30a20d61219367742bd67e93c156883c3eece7e.jar
+C:\Users\frutos\AndroidStudioProjects\SlidingMenu\app\build\intermediates\pre-dexed\debug\internal_impl-21.0.0-4ba65df2adb1877114cde5e9734e95037bc81bec.jar
+C:\Users\frutos\AndroidStudioProjects\SlidingMenu\app\build\intermediates\pre-dexed\debug\core-3.1.0-374293a71bbc76fa115ae959917ad8d90665a72b.jar
+C:\Users\frutos\AndroidStudioProjects\SlidingMenu\app\build\intermediates\pre-dexed\debug\classes-97fbf7b1d538b68c8392f78314b943858d6ff788.jar
+C:\Users\frutos\AndroidStudioProjects\SlidingMenu\app\build\intermediates\pre-dexed\debug\classes-0462ea45d6cf74248d9fdc61526dd82472eadb35.jar

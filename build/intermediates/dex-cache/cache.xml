@@ -2,11 +2,39 @@
 <items version="2" >
 
     <item
-        jar="C:\Users\frutos\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-v4\18.0.0\support-v4-18.0.0.jar"
+        jar="C:\Users\frutos\AndroidStudioProjects\SlidingMenu\app\build\intermediates\exploded-aar\com.android.support\support-v4\21.0.0\classes.jar"
         jumboMode="false"
         revision="21.1.2"
-        sha1="44ec51e9d395a47aab135e5e1b556c0007442156">
-        <dex dex="C:\Users\frutos\AndroidStudioProjects\SlidingMenu\app\build\intermediates\pre-dexed\debug\support-v4-18.0.0-f5d27023e1a74ab364f71f6a16b9e711a4f1dc13.jar" />
+        sha1="686344a780033e4ba22b926cd225f8d4941247e6">
+        <dex dex="C:\Users\frutos\AndroidStudioProjects\SlidingMenu\app\build\intermediates\pre-dexed\debug\classes-97fbf7b1d538b68c8392f78314b943858d6ff788.jar" />
+    </item>
+    <item
+        jar="C:\Users\frutos\AndroidStudioProjects\SlidingMenu\app\build\intermediates\exploded-aar\com.android.support\support-v4\21.0.0\libs\internal_impl-21.0.0.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="1609e6d42d0480b0f4188e2c29f75388fa12a8f0">
+        <dex dex="C:\Users\frutos\AndroidStudioProjects\SlidingMenu\app\build\intermediates\pre-dexed\debug\internal_impl-21.0.0-4ba65df2adb1877114cde5e9734e95037bc81bec.jar" />
+    </item>
+    <item
+        jar="C:\Users\frutos\AndroidStudioProjects\SlidingMenu\app\libs\core-3.1.0.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="908e18674f895e3e1fa8f4a954b8c637a23d2801">
+        <dex dex="C:\Users\frutos\AndroidStudioProjects\SlidingMenu\app\build\intermediates\pre-dexed\debug\core-3.1.0-374293a71bbc76fa115ae959917ad8d90665a72b.jar" />
+    </item>
+    <item
+        jar="C:\Users\frutos\AndroidStudioProjects\SlidingMenu\app\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.5.87\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="dd9247ea0fabe8ee479638c4b4a23e93752be256">
+        <dex dex="C:\Users\frutos\AndroidStudioProjects\SlidingMenu\app\build\intermediates\pre-dexed\debug\classes-0462ea45d6cf74248d9fdc61526dd82472eadb35.jar" />
+    </item>
+    <item
+        jar="C:\Users\frutos\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\21.0.0\support-annotations-21.0.0.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="1a578b9607b36266c63d43a4fa0ab5664dbe911e">
+        <dex dex="C:\Users\frutos\AndroidStudioProjects\SlidingMenu\app\build\intermediates\pre-dexed\debug\support-annotations-21.0.0-c30a20d61219367742bd67e93c156883c3eece7e.jar" />
     </item>
 
 </items>
