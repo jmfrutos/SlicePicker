@@ -10,9 +10,13 @@ import android.util.Log;
 import android.widget.Toast;
 
 import com.google.zxing.BarcodeFormat;
+import com.google.zxing.EncodeHintType;
 import com.google.zxing.WriterException;
 import com.google.zxing.common.BitMatrix;
 import com.google.zxing.qrcode.QRCodeWriter;
+
+import java.util.EnumMap;
+import java.util.Map;
 
 /**
  * Created by frutos on 08/12/2014.
@@ -30,8 +34,11 @@ public class QRCode {
 
         com.google.zxing.Writer writer = new QRCodeWriter();
         String finaldata = Uri.encode(data, "utf-8");
+        Map<EncodeHintType, Object> hints = new EnumMap<EncodeHintType, Object>(EncodeHintType.class);
+        hints.put(EncodeHintType.CHARACTER_SET, "UTF-8");
+        hints.put(EncodeHintType.MARGIN, 2); /* default = 4 */
 
-        BitMatrix bm = writer.encode(finaldata, BarcodeFormat.QR_CODE,150, 150);
+        BitMatrix bm = writer.encode(finaldata, BarcodeFormat.QR_CODE, 150, 150, hints);
         Bitmap ImageBitmap = Bitmap.createBitmap(150, 150, Bitmap.Config.ARGB_8888);
 
         try {
