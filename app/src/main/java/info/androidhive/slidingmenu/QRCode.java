@@ -31,12 +31,12 @@ public class QRCode {
         com.google.zxing.Writer writer = new QRCodeWriter();
         String finaldata = Uri.encode(data, "utf-8");
 
-        BitMatrix bm = writer.encode(finaldata, BarcodeFormat.QR_CODE,w,h);
-        Bitmap ImageBitmap = Bitmap.createBitmap(w, h, Bitmap.Config.ARGB_8888);
+        BitMatrix bm = writer.encode(finaldata, BarcodeFormat.QR_CODE,150, 150);
+        Bitmap ImageBitmap = Bitmap.createBitmap(150, 150, Bitmap.Config.ARGB_8888);
 
         try {
-            for (int i = 0; i < w; i++) {//width
-                for (int j = 0; j < h; j++) {//height
+            for (int i = 0; i < 150; i++) {//width
+                for (int j = 0; j < 150; j++) {//height
                     ImageBitmap.setPixel(i, j, bm.get(i, j) ? Color.BLACK: Color.WHITE);
                 }
             }
@@ -50,7 +50,6 @@ public class QRCode {
     public Bitmap unirQRImagen(Bitmap c, String datos, int posicion) {
 
         Bitmap s;
-
 
         Bitmap cs = null;
 
@@ -73,20 +72,20 @@ public class QRCode {
 
         switch (posicion){
             case 0:         //Posición ARRIBA - IZQUIERDA
-                pos_x = 0;
-                pos_y = 0;
+                pos_x = 10;
+                pos_y = 10;
                 break;
             case 1:         //Posición ARRIBA - DERECHA
-                pos_x = 0;
-                pos_y = width - w + 10;
+                pos_x = 10;
+                pos_y = width - 160;
                 break;
             case 2:         //Posición ABAJO - IZQUIERDA
-                pos_x = height - w + 10;
-                pos_y = 0;
+                pos_x = height - 160;
+                pos_y = 10;
                 break;
             case 4:         //Posición ABAJO - DERECHA
-                pos_x = height - w + 10;
-                pos_y = width - w + 10;
+                pos_x = height - 160;
+                pos_y = width - 160;
                 break;
         }
 
