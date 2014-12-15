@@ -38,12 +38,12 @@ public class QRCode {
         hints.put(EncodeHintType.CHARACTER_SET, "UTF-8");
         hints.put(EncodeHintType.MARGIN, 2); /* default = 4 */
 
-        BitMatrix bm = writer.encode(finaldata, BarcodeFormat.QR_CODE, 150, 150, hints);
-        Bitmap ImageBitmap = Bitmap.createBitmap(150, 150, Bitmap.Config.ARGB_8888);
+        BitMatrix bm = writer.encode(finaldata, BarcodeFormat.QR_CODE, w, h, hints);
+        Bitmap ImageBitmap = Bitmap.createBitmap(w, h, Bitmap.Config.ARGB_8888);
 
         try {
-            for (int i = 0; i < 150; i++) {//width
-                for (int j = 0; j < 150; j++) {//height
+            for (int i = 0; i < w; i++) {//width
+                for (int j = 0; j < h; j++) {//height
                     ImageBitmap.setPixel(i, j, bm.get(i, j) ? Color.BLACK: Color.WHITE);
                 }
             }
@@ -84,15 +84,15 @@ public class QRCode {
                 break;
             case 1:         //Posición ARRIBA - DERECHA
                 pos_x = 10;
-                pos_y = width - 160;
+                pos_y = width - w + 10;
                 break;
             case 2:         //Posición ABAJO - IZQUIERDA
-                pos_x = height - 160;
+                pos_x = height - w + 10;
                 pos_y = 10;
                 break;
             case 4:         //Posición ABAJO - DERECHA
-                pos_x = height - 160;
-                pos_y = width - 160;
+                pos_x = height - w + 10;
+                pos_y = width - w + 10;
                 break;
         }
 
