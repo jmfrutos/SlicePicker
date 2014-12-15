@@ -31,7 +31,7 @@ public class QRCode {
         com.google.zxing.Writer writer = new QRCodeWriter();
         String finaldata = Uri.encode(data, "utf-8");
 
-        BitMatrix bm = writer.encode(finaldata, BarcodeFormat.QR_CODE,150, 150);
+        BitMatrix bm = writer.encode(finaldata, BarcodeFormat.QR_CODE,w,h);
         Bitmap ImageBitmap = Bitmap.createBitmap(w, h, Bitmap.Config.ARGB_8888);
 
         try {

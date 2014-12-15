@@ -2,29 +2,37 @@ package info.androidhive.slidingmenu;
 
 import android.app.Activity;
 import android.app.Fragment;
+import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.v4.app.FragmentActivity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
 //import android.view.Menu;
+import android.os.Environment;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.ImageView;
 import android.widget.FrameLayout;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
-
+import java.io.File;
+import java.io.IOException;
+import java.util.Date;
+import java.text.SimpleDateFormat;
 
 public class SubirFotoFragment extends Fragment{
+    static final int REQUEST_TAKE_PHOTO = 0;
+    static final int REQUEST_GALLERY_PHOTO = 1;
+
     ImageView miImagen;
     FrameLayout llLayout;
+    String mCurrentPhotoPath;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
+        //Inflate the layout for this fragment
         llLayout = (FrameLayout) inflater.inflate(R.layout.fragment_subir_foto, container, false);
 
         miImagen = (ImageView) llLayout.findViewById(R.id.imageView1);
@@ -39,7 +47,7 @@ public class SubirFotoFragment extends Fragment{
     }
 
     public void open(){
-        Image_Picker_Dialog();
+      Image_Picker_Dialog();
     }
 
     @Override
@@ -57,17 +65,20 @@ public class SubirFotoFragment extends Fragment{
 
     public void onActivityResult(int requestCode, int resultCode, Intent imageReturnedIntent) {
         super.onActivityResult(requestCode, resultCode, imageReturnedIntent);
-        QRCode qr= new QRCode(super.getActivity());
+        QRCode qr= new QRCode(getActivity());
         switch(requestCode) {
-            case 0:
+            case 0://
                 if(resultCode == Activity.RESULT_OK){
                     super.onActivityResult(requestCode, resultCode, imageReturnedIntent);
-                    Bitmap bp = (Bitmap) imageReturnedIntent.getExtras().get("data");
-                    miImagen.setImageBitmap(qr.unirQRImagen(bp, "String Test",4));
+                    //Bitmap bp = (Bitmap) imageReturnedIntent.getExtras().get("data");
+                    //miImagen.setImageBitmap(qr.unirQRImagen(bp, "String Test",4));
+
+                    //Bitmap miBitmap = BitmapFactory.decodeFile(mCurrentPhotoPath);
+                    //miImagen.setImageBitmap(miBitmap);
                 }
 
                 break;
-            case 1:
+            case 1://
                 if(resultCode == Activity.RESULT_OK){
                     Uri selectedImage = imageReturnedIntent.getData();
                     miImagen.setImageURI(selectedImage);
@@ -76,14 +87,7 @@ public class SubirFotoFragment extends Fragment{
         }
 
     }
-/*
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.subir_foto_menu, menu);
-        return true;
-    }
-*/
+
     public void Image_Picker_Dialog()
     {
         AlertDialog.Builder myAlertDialog = new AlertDialog.Builder(getActivity());
@@ -103,11 +107,49 @@ public class SubirFotoFragment extends Fragment{
         {
             public void onClick(DialogInterface arg0, int arg1)
             {
-                Intent takePicture = new Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
-                startActivityForResult(takePicture, 0);//zero can be replaced with any action code
+                dispatchTakePictureIntent();
+                //Intent takePicture = new Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
+                //startActivityForResult(takePicture, 0);//zero can be replaced with any action code
             }
         });
         myAlertDialog.show();
+    }
+
+    private File createImageFile() throws IOException {
+        // Create an image file name
+        String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
+        String imageFileName = "JPEG_" + timeStamp + "_";
+        File storageDir = Environment.getExternalStoragePublicDirectory(
+                Environment.DIRECTORY_PICTURES);
+        File image = File.createTempFile(
+                imageFileName,  /* prefix */
+                ".jpg",         /* suffix */
+                storageDir      /* directory */
+        );
+
+        // Save a file: path for use with ACTION_VIEW intents
+        mCurrentPhotoPath = "file:" + image.getAbsolutePath();
+        return image;
+    }
+
+    private void dispatchTakePictureIntent() {
+        Intent takePictureIntent = new Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
+        // Ensure that there's a camera activity to handle the intent
+        if (takePictureIntent.resolveActivity(getActivity().getPackageManager()) != null) {
+            // Create the File where the photo should go
+            File photoFile = null;
+            try {
+                photoFile = createImageFile();
+            } catch (IOException ex) {
+                // Error occurred while creating the File
+            }
+            // Continue only if the File was successfully created
+            if (photoFile != null) {
+                takePictureIntent.putExtra(android.provider.MediaStore.EXTRA_OUTPUT,
+                        Uri.fromFile(photoFile));
+                startActivityForResult(takePictureIntent, REQUEST_TAKE_PHOTO);
+            }
+        }
     }
 
 }
