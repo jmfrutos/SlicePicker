@@ -36,13 +36,7 @@ public class SubirFotoFragment extends Fragment{
         llLayout = (FrameLayout) inflater.inflate(R.layout.fragment_subir_foto, container, false);
 
         miImagen = (ImageView) llLayout.findViewById(R.id.imageView1);
-        miImagen.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                open();
-            }
-        });
-
+        open();
         return llLayout;
     }
 
@@ -67,7 +61,7 @@ public class SubirFotoFragment extends Fragment{
         super.onActivityResult(requestCode, resultCode, imageReturnedIntent);
         QRCode qr= new QRCode(getActivity());
         switch(requestCode) {
-            case 0://
+            case REQUEST_TAKE_PHOTO://
                 if(resultCode == Activity.RESULT_OK){
                     super.onActivityResult(requestCode, resultCode, imageReturnedIntent);
                     //Bitmap bp = (Bitmap) imageReturnedIntent.getExtras().get("data");
@@ -78,7 +72,7 @@ public class SubirFotoFragment extends Fragment{
                 }
 
                 break;
-            case 1://
+            case REQUEST_GALLERY_PHOTO://
                 if(resultCode == Activity.RESULT_OK){
                     Uri selectedImage = imageReturnedIntent.getData();
                     miImagen.setImageURI(selectedImage);
