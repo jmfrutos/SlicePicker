@@ -20,6 +20,7 @@ public class InfoEXIF {
             latitud = exif.getAttributeDouble(ExifInterface.TAG_GPS_LATITUDE, -1);
             longitud = exif.getAttributeDouble(ExifInterface.TAG_GPS_LONGITUDE, -1);
             altitud = exif.getAttributeDouble(ExifInterface.TAG_GPS_ALTITUDE, -1);
+
             geopoint = new LatLng(latitud, longitud);
         }
         catch (  Throwable t) {

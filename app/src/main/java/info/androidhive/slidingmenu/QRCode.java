@@ -25,18 +25,18 @@ public class QRCode {
         mContex = context;
     }
 
-    private Bitmap generarQRCode(String data)throws WriterException {
+    private Bitmap generarQRCode(String data, int w, int h)throws WriterException {
 
 
         com.google.zxing.Writer writer = new QRCodeWriter();
         String finaldata = Uri.encode(data, "utf-8");
 
         BitMatrix bm = writer.encode(finaldata, BarcodeFormat.QR_CODE,150, 150);
-        Bitmap ImageBitmap = Bitmap.createBitmap(150, 150, Bitmap.Config.ARGB_8888);
+        Bitmap ImageBitmap = Bitmap.createBitmap(w, h, Bitmap.Config.ARGB_8888);
 
         try {
-            for (int i = 0; i < 150; i++) {//width
-                for (int j = 0; j < 150; j++) {//height
+            for (int i = 0; i < w; i++) {//width
+                for (int j = 0; j < h; j++) {//height
                     ImageBitmap.setPixel(i, j, bm.get(i, j) ? Color.BLACK: Color.WHITE);
                 }
             }
@@ -50,20 +50,23 @@ public class QRCode {
     public Bitmap unirQRImagen(Bitmap c, String datos, int posicion) {
 
         Bitmap s;
-        try {
-            s = generarQRCode(datos);
-        } catch (WriterException e) {
-            Log.w("QRCode - unirQRCode", e.toString());
-            s = null;
-        }
+
 
         Bitmap cs = null;
 
-        int width, height = 0;
+        int width, height, w  = 0;
 
         width = c.getWidth();
         height = c.getHeight();
 
+        w = width / 10;
+
+        try {
+            s = generarQRCode(datos, w, w);
+        } catch (WriterException e) {
+            Log.w("QRCode - unirQRCode", e.toString());
+            s = null;
+        }
 
         float pos_x = 0;
         float pos_y = 0;
@@ -75,15 +78,15 @@ public class QRCode {
                 break;
             case 1:         //Posición ARRIBA - DERECHA
                 pos_x = 0;
-                pos_y = width - 160;
+                pos_y = width - w + 10;
                 break;
             case 2:         //Posición ABAJO - IZQUIERDA
-                pos_x = height - 160;
+                pos_x = height - w + 10;
                 pos_y = 0;
                 break;
             case 4:         //Posición ABAJO - DERECHA
-                pos_x = height - 160;
-                pos_y = width - 160;
+                pos_x = height - w + 10;
+                pos_y = width - w + 10;
                 break;
         }
 
