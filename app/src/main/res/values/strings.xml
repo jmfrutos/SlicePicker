@@ -35,6 +35,12 @@
     <string name="heading_dismissable_list_view">Suscripciones</string>
     <string name="filtrar_suscripciones">Filtre aquí</string>
 
+    <!-->Strings para el fragment recientes<-->
+    <string name="popupImageItem1">Guardar imagen</string>
+    <string name="popupImageItem2">Clasificar</string>
+    <string name="popupImageItem3">Suscribir</string>
+    <string name="desc">View de imagen</string>
+
     <!-- >String para el fragment subir foto</ -->
     <string name="imagen">Imagen</string>
     <string name="tap">Subir imagen desde la camara: </string>

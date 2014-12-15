@@ -1,6 +1,6 @@
-C:\Users\frutos\AndroidStudioProjects\SlidingMenu\app\build\intermediates\classes\debug
-C:\Users\frutos\AndroidStudioProjects\SlidingMenu\app\build\intermediates\pre-dexed\debug\support-annotations-21.0.0-c30a20d61219367742bd67e93c156883c3eece7e.jar
-C:\Users\frutos\AndroidStudioProjects\SlidingMenu\app\build\intermediates\pre-dexed\debug\internal_impl-21.0.0-4ba65df2adb1877114cde5e9734e95037bc81bec.jar
-C:\Users\frutos\AndroidStudioProjects\SlidingMenu\app\build\intermediates\pre-dexed\debug\core-3.1.0-374293a71bbc76fa115ae959917ad8d90665a72b.jar
-C:\Users\frutos\AndroidStudioProjects\SlidingMenu\app\build\intermediates\pre-dexed\debug\classes-97fbf7b1d538b68c8392f78314b943858d6ff788.jar
-C:\Users\frutos\AndroidStudioProjects\SlidingMenu\app\build\intermediates\pre-dexed\debug\classes-0462ea45d6cf74248d9fdc61526dd82472eadb35.jar
+C:\Users\Yo\AndroidStudioProjects\SlicePicker\app\build\intermediates\classes\debug
+C:\Users\Yo\AndroidStudioProjects\SlicePicker\app\build\intermediates\pre-dexed\debug\support-annotations-21.0.0-cef48883a5558dc3c149561c258f687917036042.jar
+C:\Users\Yo\AndroidStudioProjects\SlicePicker\app\build\intermediates\pre-dexed\debug\internal_impl-21.0.0-0f7d72094e0d0179df1555de68c218328e13a48a.jar
+C:\Users\Yo\AndroidStudioProjects\SlicePicker\app\build\intermediates\pre-dexed\debug\core-3.1.0-adf82c4a729a6ea66254a46776b9506e3ae1e318.jar
+C:\Users\Yo\AndroidStudioProjects\SlicePicker\app\build\intermediates\pre-dexed\debug\classes-eaee32526cae0f11ff436f1c60c63fa958ab8e90.jar
+C:\Users\Yo\AndroidStudioProjects\SlicePicker\app\build\intermediates\pre-dexed\debug\classes-a8a86c5abf3dd7add35ea7d7880b666b750dca9b.jar

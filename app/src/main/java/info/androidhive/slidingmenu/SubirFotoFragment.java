@@ -23,8 +23,7 @@ public class SubirFotoFragment extends Fragment{
     FrameLayout llLayout;
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         llLayout = (FrameLayout) inflater.inflate(R.layout.fragment_subir_foto, container, false);
 
@@ -58,12 +57,13 @@ public class SubirFotoFragment extends Fragment{
 
     public void onActivityResult(int requestCode, int resultCode, Intent imageReturnedIntent) {
         super.onActivityResult(requestCode, resultCode, imageReturnedIntent);
+        QRCode qr= new QRCode(super.getActivity());
         switch(requestCode) {
             case 0:
                 if(resultCode == Activity.RESULT_OK){
                     super.onActivityResult(requestCode, resultCode, imageReturnedIntent);
                     Bitmap bp = (Bitmap) imageReturnedIntent.getExtras().get("data");
-                    miImagen.setImageBitmap(bp);
+                    miImagen.setImageBitmap(qr.unirQRImagen(bp, "String Test",4));
                 }
 
                 break;
@@ -74,6 +74,7 @@ public class SubirFotoFragment extends Fragment{
                 }
                 break;
         }
+
     }
 /*
     @Override
@@ -107,7 +108,6 @@ public class SubirFotoFragment extends Fragment{
             }
         });
         myAlertDialog.show();
-
     }
 
 }

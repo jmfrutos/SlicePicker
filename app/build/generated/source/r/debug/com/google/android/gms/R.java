@@ -47,33 +47,33 @@ public final class R {
 		public static final int zOrderOnTop = 0x7f010014;
 	}
 	public static final class color {
-		public static final int common_action_bar_splitter = 0x7f060000;
-		public static final int common_signin_btn_dark_text_default = 0x7f060001;
-		public static final int common_signin_btn_dark_text_disabled = 0x7f060002;
-		public static final int common_signin_btn_dark_text_focused = 0x7f060003;
-		public static final int common_signin_btn_dark_text_pressed = 0x7f060004;
-		public static final int common_signin_btn_default_background = 0x7f060005;
-		public static final int common_signin_btn_light_text_default = 0x7f060006;
-		public static final int common_signin_btn_light_text_disabled = 0x7f060007;
-		public static final int common_signin_btn_light_text_focused = 0x7f060008;
-		public static final int common_signin_btn_light_text_pressed = 0x7f060009;
-		public static final int common_signin_btn_text_dark = 0x7f06001d;
-		public static final int common_signin_btn_text_light = 0x7f06001e;
-		public static final int wallet_bright_foreground_disabled_holo_light = 0x7f060010;
-		public static final int wallet_bright_foreground_holo_dark = 0x7f060011;
-		public static final int wallet_bright_foreground_holo_light = 0x7f060012;
-		public static final int wallet_dim_foreground_disabled_holo_dark = 0x7f060013;
-		public static final int wallet_dim_foreground_holo_dark = 0x7f060014;
-		public static final int wallet_dim_foreground_inverse_disabled_holo_dark = 0x7f060015;
-		public static final int wallet_dim_foreground_inverse_holo_dark = 0x7f060016;
-		public static final int wallet_highlighted_text_holo_dark = 0x7f060017;
-		public static final int wallet_highlighted_text_holo_light = 0x7f060018;
-		public static final int wallet_hint_foreground_holo_dark = 0x7f060019;
-		public static final int wallet_hint_foreground_holo_light = 0x7f06001a;
-		public static final int wallet_holo_blue_light = 0x7f06001b;
-		public static final int wallet_link_text_light = 0x7f06001c;
-		public static final int wallet_primary_text_holo_light = 0x7f06001f;
-		public static final int wallet_secondary_text_holo_dark = 0x7f060020;
+		public static final int common_action_bar_splitter = 0x7f060001;
+		public static final int common_signin_btn_dark_text_default = 0x7f060002;
+		public static final int common_signin_btn_dark_text_disabled = 0x7f060003;
+		public static final int common_signin_btn_dark_text_focused = 0x7f060004;
+		public static final int common_signin_btn_dark_text_pressed = 0x7f060005;
+		public static final int common_signin_btn_default_background = 0x7f060006;
+		public static final int common_signin_btn_light_text_default = 0x7f060007;
+		public static final int common_signin_btn_light_text_disabled = 0x7f060008;
+		public static final int common_signin_btn_light_text_focused = 0x7f060009;
+		public static final int common_signin_btn_light_text_pressed = 0x7f06000a;
+		public static final int common_signin_btn_text_dark = 0x7f06001f;
+		public static final int common_signin_btn_text_light = 0x7f060020;
+		public static final int wallet_bright_foreground_disabled_holo_light = 0x7f060011;
+		public static final int wallet_bright_foreground_holo_dark = 0x7f060012;
+		public static final int wallet_bright_foreground_holo_light = 0x7f060013;
+		public static final int wallet_dim_foreground_disabled_holo_dark = 0x7f060014;
+		public static final int wallet_dim_foreground_holo_dark = 0x7f060015;
+		public static final int wallet_dim_foreground_inverse_disabled_holo_dark = 0x7f060016;
+		public static final int wallet_dim_foreground_inverse_holo_dark = 0x7f060017;
+		public static final int wallet_highlighted_text_holo_dark = 0x7f060018;
+		public static final int wallet_highlighted_text_holo_light = 0x7f060019;
+		public static final int wallet_hint_foreground_holo_dark = 0x7f06001a;
+		public static final int wallet_hint_foreground_holo_light = 0x7f06001b;
+		public static final int wallet_holo_blue_light = 0x7f06001c;
+		public static final int wallet_link_text_light = 0x7f06001d;
+		public static final int wallet_primary_text_holo_light = 0x7f060021;
+		public static final int wallet_secondary_text_holo_dark = 0x7f060022;
 	}
 	public static final class drawable {
 		public static final int common_full_open_on_phone = 0x7f020001;
@@ -102,12 +102,12 @@ public final class R {
 		public static final int common_signin_btn_text_normal_light = 0x7f020018;
 		public static final int common_signin_btn_text_pressed_dark = 0x7f020019;
 		public static final int common_signin_btn_text_pressed_light = 0x7f02001a;
-		public static final int ic_plusone_medium_off_client = 0x7f020024;
-		public static final int ic_plusone_small_off_client = 0x7f020025;
-		public static final int ic_plusone_standard_off_client = 0x7f020026;
-		public static final int ic_plusone_tall_off_client = 0x7f020027;
-		public static final int powered_by_google_dark = 0x7f02002d;
-		public static final int powered_by_google_light = 0x7f02002e;
+		public static final int ic_plusone_medium_off_client = 0x7f020029;
+		public static final int ic_plusone_small_off_client = 0x7f02002a;
+		public static final int ic_plusone_standard_off_client = 0x7f02002b;
+		public static final int ic_plusone_tall_off_client = 0x7f02002c;
+		public static final int powered_by_google_dark = 0x7f02003c;
+		public static final int powered_by_google_light = 0x7f02003d;
 	}
 	public static final class id {
 		public static final int adjust_height = 0x7f0c0000;
@@ -173,9 +173,9 @@ public final class R {
 		public static final int create_calendar_message = 0x7f090021;
 		public static final int create_calendar_title = 0x7f090022;
 		public static final int decline = 0x7f090023;
-		public static final int store_picture_message = 0x7f09002d;
-		public static final int store_picture_title = 0x7f09002e;
-		public static final int wallet_buy_button_place_holder = 0x7f090030;
+		public static final int store_picture_message = 0x7f090031;
+		public static final int store_picture_title = 0x7f090032;
+		public static final int wallet_buy_button_place_holder = 0x7f090034;
 	}
 	public static final class style {
 		public static final int Theme_IAPTheme = 0x7f0a0002;
