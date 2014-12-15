@@ -9,10 +9,8 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
-//import android.view.Menu;
 import android.os.Environment;
 import android.view.View;
-import android.view.View.OnClickListener;
 import android.widget.ImageView;
 import android.widget.FrameLayout;
 import android.view.LayoutInflater;
@@ -23,12 +21,22 @@ import java.util.Date;
 import java.text.SimpleDateFormat;
 
 public class SubirFotoFragment extends Fragment{
+
+    // Storage for camera image URI components
+    private final static String CAPTURED_PHOTO_PATH_KEY = "mCurrentPhotoPath";
+    private final static String CAPTURED_PHOTO_URI_KEY = "mCapturedImageURI";
+
+    private String mCurrentPhotoPath2 = null;
+    private Uri mCapturedImageURI = null;
+
     static final int REQUEST_TAKE_PHOTO = 0;
     static final int REQUEST_GALLERY_PHOTO = 1;
 
     ImageView miImagen;
     FrameLayout llLayout;
     String mCurrentPhotoPath;
+
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -67,12 +75,13 @@ public class SubirFotoFragment extends Fragment{
                     //Bitmap bp = (Bitmap) imageReturnedIntent.getExtras().get("data");
                     //miImagen.setImageBitmap(qr.unirQRImagen(bp, "String Test",4));
 
-                    //Bitmap miBitmap = BitmapFactory.decodeFile(mCurrentPhotoPath);
-                    //miImagen.setImageBitmap(miBitmap);
+                    Bitmap miBitmap = BitmapFactory.decodeFile(mCurrentPhotoPath);
+                    //System.out.print("Width: " +miBitmap.getWidth() + ". Height" + miBitmap.getHeight());
+                    miImagen.setImageBitmap(miBitmap);
                 }
 
                 break;
-            case REQUEST_GALLERY_PHOTO://
+            case REQUEST_GALLERY_PHOTO:
                 if(resultCode == Activity.RESULT_OK){
                     Uri selectedImage = imageReturnedIntent.getData();
                     miImagen.setImageURI(selectedImage);
@@ -85,23 +94,19 @@ public class SubirFotoFragment extends Fragment{
     public void Image_Picker_Dialog()
     {
         AlertDialog.Builder myAlertDialog = new AlertDialog.Builder(getActivity());
-        myAlertDialog.setTitle("Pictures Option");
-        myAlertDialog.setMessage("Select Picture Mode");
+        myAlertDialog.setTitle("Subir fotografía");
+        myAlertDialog.setMessage("Seleccione una opción");
 
-        myAlertDialog.setPositiveButton("Gallery", new DialogInterface.OnClickListener()
-        {
-            public void onClick(DialogInterface arg0, int arg1)
-            {
+        myAlertDialog.setPositiveButton("Galería", new DialogInterface.OnClickListener(){
+            public void onClick(DialogInterface arg0, int arg1){
                 Intent pickPhoto = new Intent(Intent.ACTION_PICK, android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-                startActivityForResult(pickPhoto , 1);//one can be replaced with any action code
+                startActivityForResult(pickPhoto, REQUEST_GALLERY_PHOTO);
             }
         });
 
-        myAlertDialog.setNegativeButton("Camera", new DialogInterface.OnClickListener()
-        {
-            public void onClick(DialogInterface arg0, int arg1)
-            {
-                dispatchTakePictureIntent();
+        myAlertDialog.setNegativeButton("Cámara", new DialogInterface.OnClickListener(){
+            public void onClick(DialogInterface arg0, int arg1){
+                dispatchTakePictureIntent();//tambien llama al startActivityForResult
                 //Intent takePicture = new Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
                 //startActivityForResult(takePicture, 0);//zero can be replaced with any action code
             }
@@ -126,7 +131,7 @@ public class SubirFotoFragment extends Fragment{
         return image;
     }
 
-    private void dispatchTakePictureIntent() {
+    private void dispatchTakePictureIntent(){
         Intent takePictureIntent = new Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
         // Ensure that there's a camera activity to handle the intent
         if (takePictureIntent.resolveActivity(getActivity().getPackageManager()) != null) {
@@ -143,6 +148,25 @@ public class SubirFotoFragment extends Fragment{
                         Uri.fromFile(photoFile));
                 startActivityForResult(takePictureIntent, REQUEST_TAKE_PHOTO);
             }
+        }
+    }
+
+    @Override public void onSaveInstanceState(Bundle savedInstanceState){
+        if (mCurrentPhotoPath2 != null){
+            savedInstanceState.putString(CAPTURED_PHOTO_PATH_KEY, mCurrentPhotoPath);
+        } if (mCapturedImageURI != null) {
+            savedInstanceState.putString(CAPTURED_PHOTO_URI_KEY, mCapturedImageURI.toString());
+        }
+        super.onSaveInstanceState(savedInstanceState);
+    }
+
+    @Override
+    public void onActivityCreated(Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+        if (savedInstanceState != null) {
+            // Restore last state for checked position.
+            mCurrentPhotoPath2 = savedInstanceState.getString(CAPTURED_PHOTO_PATH_KEY);
+            mCapturedImageURI = Uri.parse(savedInstanceState.getString(CAPTURED_PHOTO_URI_KEY));
         }
     }
 
